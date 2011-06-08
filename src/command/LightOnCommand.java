@@ -1,8 +1,8 @@
 package command;
 
-public class CommandOnLight implements Command {
+public class LightOnCommand implements Command {
 	private Light light;
-	public CommandOnLight(Light light){
+	public LightOnCommand(Light light){
 		this.light = light;
 	}
 	@Override
@@ -14,6 +14,10 @@ public class CommandOnLight implements Command {
 	}
 	public Light getLight() {
 		return light;
+	}
+	@Override
+	public void undo() {
+		this.light.off();
 	}
 	
 }
